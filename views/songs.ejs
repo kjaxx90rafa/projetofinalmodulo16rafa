@@ -11,5 +11,32 @@
     </header>
 
     <h1>Músicas</h1>
+
+    <table border="2">
+        <tr> 
+            <th bgcolor="#aac1e1">Titulo</th> 
+            <th bgcolor="#aac1e1">Artista</th>
+            <th bgcolor="#aac1e1">Album</th>
+            <th bgcolor="#aac1e1">Género</th>
+            <th bgcolor="#aac1e1">Duração (sec)</th>
+            <th bgcolor="#aac1e1">Likes</th>
+            <th bgcolor="#aac1e1">Data de Lançamento</th>
+            <th bgcolor="#a6003f">Eliminar</th>
+        </tr>    
+
+        <% for (let i=0; i < query.length; i++) {%>
+
+        <tr>
+            <td><%= query[i].title%></td>
+            <td><%= query[i].artist%></td>
+            <td><%= query[i].album%></td>
+            <td><%= query[i].genre%></td>
+            <td><%= query[i].duration_seconds%></td>
+            <td><%= query[i].likes%></td>
+            <td><%= query[i].release_date%></td>
+        </tr>
+
+        <% }%>
+    </table>
 </body>
 </html>
