@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -12,7 +13,7 @@
 
     <h1>Criar uma música nova</h1>
 
-    <form id="music_id">
+    <form id="new-song_form">
         <label for="title">Titulo:</label>
         <input type="text" name="title" id="title">
 
@@ -48,7 +49,25 @@
 
         <br>
 
-        <button type="submit">Criar</button>
+        <button type="submit">Adicionar</button>
     </form>
+    <script>   
+
+
+        document.getElementById('new-song_form').addEventListener('submit', function(event){
+            event.preventDefault();
+
+            const formData = new FormData (event.target);
+            const data = Object.fromEntries(formData.entries());
+
+            axios.post('/api/songs', data).then(response => {
+                console.log('Success', response.data);
+                location.reload();
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
 </body>
 </html>
