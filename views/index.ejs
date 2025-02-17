@@ -18,10 +18,23 @@
     <p>Utilize o meno acima para navegar pelas diferentes paginas da aplicação</p>
 
     <p>Obter uma musica</p>
-    <form id="music_id">
-        <label for="id">Id da musica:</label>
-        <input type="text" name="id" id="id">
+    <form id="search_Form">
+        <label for="search">Id da musica:</label>
+        <input type="text" name="search" id="search">
         <button type="submit">Obter</button>
     </form>
+
+    <script>   
+
+
+        document.getElementById('search_Form').addEventListener('submit', function(event){
+            event.preventDefault();
+
+            const formData = new FormData (event.target);
+            const data = Object.fromEntries(formData.entries());
+
+            window.location.href = "http://localhost:3000/song/" + data.id;
+        });
+    </script>
 </body>
 </html>
