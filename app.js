@@ -361,6 +361,33 @@ app.get('/price', (req, res) => {
     res.render('price', {price: priceperlike})
 })  
 
+app.get('/songs/:id', (req, res) => {
+    res.render('song')
+})
+
+app.get('/song/:id', (req, res) => {
+    const id = req.params.id;
+
+    const myQuery = `SELECT * FROM songs WHERE id = ${id}`;
+
+    connection.query(myQuery, (err, results) => {  
+        if (err) {
+            return res.status(500).send('Erro ao buscar musica: ' + err.message);
+        }
+        const dinheiro = results[0].likes * priceperlike;
+
+        axios.get(`https://api.lyrics.ovh/v1/${results[0].artist}/${results[0].title}`)
+            .then(response => {
+                console.log('Sucess:', response.data);
+                res.render('song', {query:results, musicID:id, receita:dinheiro, lyrics:response.data})
+            })
+
+            .catch(error => {
+                console.error('Erro:', error);
+            })      
+})
+})
+
 const PORT = 3000;
 app.listen(PORT, ()=> {
 console.log(`Servidor a correr em http://localhost:${PORT}`);

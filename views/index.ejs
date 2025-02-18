@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Document</title>
     <style>
     </style>
@@ -18,16 +19,16 @@
     <p>Utilize o meno acima para navegar pelas diferentes paginas da aplicação</p>
 
     <p>Obter uma musica</p>
-    <form id="search_Form">
-        <label for="search">Id da musica:</label>
-        <input type="text" name="search" id="search">
+    <form id="musicID">
+        <label for="id">Id da musica:</label>
+        <input type="text" name="id" id="id">
         <button type="submit">Obter</button>
     </form>
 
     <script>   
 
 
-        document.getElementById('search_Form').addEventListener('submit', function(event){
+        document.getElementById('musicID').addEventListener('submit', function(event){
             event.preventDefault();
 
             const formData = new FormData (event.target);

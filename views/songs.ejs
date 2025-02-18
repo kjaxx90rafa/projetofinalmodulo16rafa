@@ -37,13 +37,13 @@
             <td><%= query[i].duration_seconds%></td>
             <td><%= query[i].likes%></td>
             <td><%= query[i].release_date%></td>
-            <td><div onclick="apagar(<%= query[i].id %>)">Eliminar</div></td>
+            <td><button onclick="apagar(`<%= query[i].id %>`)">Eliminar</button></td>
         </tr>
 
         <script>
             function apagar(id) {
 
-                axios.delete(`/api/songs/${id}`, data).then(response => {
+                axios.delete(`/api/songs/${id}`).then(response => {
                     console.log('Success', response.data);
                     location.reload();
                 })
