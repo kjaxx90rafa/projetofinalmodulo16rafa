@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14-Fev-2025 às 19:20
--- Versão do servidor: 10.4.28-MariaDB
--- versão do PHP: 8.2.4
+-- Generation Time: Feb 20, 2025 at 10:57 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `modulo16rafa`
+-- Database: `modulo16rafa`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `songs`
+-- Table structure for table `songs`
 --
 
 CREATE TABLE `songs` (
@@ -40,39 +40,32 @@ CREATE TABLE `songs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `songs`
+-- Dumping data for table `songs`
 --
 
 INSERT INTO `songs` (`id`, `title`, `artist`, `album`, `genre`, `duration_seconds`, `release_date`, `likes`, `created_at`) VALUES
-(1, 'Living Lavish', 'tana', 'Living Lavish', 'Hip-Hop', 144, '1899-11-30', 10143019, '2025-01-13 10:54:32'),
-(2, 'Yale', 'Ken Carson', 'Teen X', 'Opium', 106, '0000-00-00', 341781580, '2025-01-13 11:57:28'),
-(3, 'Clouded', 'Brent Faiyaz', 'Fuck The World', 'R&B ', 110, '0000-00-00', 654053044, '2025-01-13 11:57:40'),
-(4, 'N o C h i l l', 'PARTYNEXTDOOR', 'PARTYNEXTDOOR 4 (P4)', 'R&B', 265, '0000-00-00', 102781352, '2025-01-13 11:57:52'),
-(5, 'Mulher que deus amou', 'Valete', 'Educação Visual', 'Hip-Hop', 221, '0000-00-00', 677561, '2025-01-13 11:57:52'),
-(12, 'ss', 'Ken carson', 'ss', 'Rap', 118, '2006-10-11', 3977561, '2025-01-20 11:52:58'),
-(13, '14', 'tana', '14', 'Rap', 98, '2012-01-01', 1977561, '2025-01-20 11:52:58'),
-(16, 'haha', 'tawdawd', 'haha', 'Rap', 98, '2012-01-01', 1977561, '2025-01-20 12:02:46'),
-(17, 'awdad', 'aaa', 'www', 'ddd', 122, '2025-02-14', 111222, '2025-02-14 17:55:25');
+(17, 'Adventure of a Lifetime', 'Coldplay', 'yessss', 'R&B', 110, '2025-02-20', 11111111, '2025-02-20 08:35:16'),
+(18, 'No one knows', 'brent faiyaz', 'yes', 'R&B', 271, '2025-02-19', 11111111, '2025-02-20 09:03:13');
 
 --
--- Índices para tabelas despejadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices para tabela `songs`
+-- Indexes for table `songs`
 --
 ALTER TABLE `songs`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `songs`
+-- AUTO_INCREMENT for table `songs`
 --
 ALTER TABLE `songs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -374,6 +374,9 @@ app.get('/song/:id', (req, res) => {
         if (err) {
             return res.status(500).send('Erro ao buscar musica: ' + err.message);
         }
+
+        if (results.length != 0) {
+        
         const dinheiro = results[0].likes * priceperlike;
 
         axios.get(`https://api.lyrics.ovh/v1/${results[0].artist}/${results[0].title}`)
@@ -384,7 +387,11 @@ app.get('/song/:id', (req, res) => {
 
             .catch(error => {
                 console.error('Erro:', error);
+                res.render('song', {query:results, musicID:id, receita:dinheiro, lyrics: null})
             })      
+        } else {
+            res.sendStatus(404);
+        }
 })
 })
 
