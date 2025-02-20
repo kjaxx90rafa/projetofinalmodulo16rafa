@@ -333,7 +333,7 @@ app.post('/api/songs/bulk', (req, res) =>{
 res.status(200).send('Musicas adicionadas com sucesso');
 })
 
-app.get('/index', (req, res) => {
+app.get('/', (req, res) => {
     res.render('index')
 })
 

@@ -7,68 +7,155 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title> Song </title>
     <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 10px;
-        background-color: #f4f4f4;
-    }
+   body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    text-align: center;
+}
 
-    header {
-        color: #fff;
-        text-align: center;
-    }
+header {
+    background-color: #1e1e2d;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-    h1 {
-        color: #333;
-    }
+h1 {
+    color: #222;
+    margin-top: 30px;
+    font-size: 2em;
+    font-weight: 600;
+}
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 20px;
-    }
+p {
+    color: #555;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
 
-    table, th, td {
-        border: 1px solid #ddd;
-    }
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    background: white;
+}
 
-    th, td {
-        padding: 8px;
-        text-align: left;
-    }
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
 
-    th {
-        background-color: #f2f2f2;
-    }
+th {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+}
 
-    form {
-        padding: 10px;
-        border-radius: 5px;
-    }
+td {
+    background-color: #f9f9f9;
+}
 
-    form label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
+form {
+    background: white;
+    padding: 25px;
+    margin: 30px auto;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+}
 
-    form input[type="text"],
-    form input[type="date"] {
-        width: 100%;
-        padding: 8px;
-        margin-bottom: 10px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-    }
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
 
-    form input[type="submit"] {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
+input[type="text"],
+input[type="date"] {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+pre {
+    background: lightblue;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+    text-align: center;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    width: 60%;
+    margin: 20px auto;
+}
     </style>
 </head>
  
@@ -82,7 +169,6 @@
     <br><br>
  
     <table border="2">
-       
         <tr>
             <td>ID </td>
             <td>Titulo</td>
@@ -93,26 +179,22 @@
             <td>Likes</td>
             <td>Data de lançamento</td>
         </tr>
-           
-            <tr>
- 
-                <td> <%= query[0].id %> </td>
-                <td> <%= query[0].title %> </td>
-                <td> <%= query[0].artist %> </td>
-                <td> <%= query[0].album %> </td>
-                <td> <%= query[0].genre %> </td>
-                <td> <%= query[0].duration_seconds %> </td>
-                <td> <%= query[0].likes %> </td>
-                <td> <%= query[0].release_date %> </td>
- 
-            </tr>
- 
+        
+        <tr>
+            <td> <%= query[0].id %> </td>
+            <td> <%= query[0].title %> </td>
+            <td> <%= query[0].artist %> </td>
+            <td> <%= query[0].album %> </td>
+            <td> <%= query[0].genre %> </td>
+            <td> <%= query[0].duration_seconds %> </td>
+            <td> <%= query[0].likes %> </td>
+            <td> <%= query[0].release_date %> </td>
+        </tr>
     </table>
  
     <br><br>
  
     <h1> Receitas: </h1>
-   
     <p> A música gerou: <%= receita %> </p>
  
     <br>
@@ -122,66 +204,49 @@
     <br>
  
     <h1> Editar Música </h1>
- 
     <br>
- 
     <form id="update_form">
- 
         <br><br>
- 
         <label for="title"> Título: </label>
         <input type="text" name="title" value="<%= query[0].title %>" required>
- 
         <br><br>
- 
         <label for="artist"> Artista: </label>
         <input type="text" name="artist" value="<%= query[0].artist %>" required>
- 
         <br><br>
- 
         <label for="genre"> Género: </label>
         <input type="text" name="genre" value="<%= query[0].genre %>" required>
- 
         <br><br>
- 
         <label for="album"> Album: </label>
         <input type="text" name="album" value="<%= query[0].album %>" required>
- 
         <br><br>
- 
         <label for="duration_seconds"> Duração (segundos): </label>
         <input type="text" name="duration_seconds" value="<%= query[0].duration_seconds %>" required>
- 
         <br><br>
- 
         <label for="release_date"> Data de lançamento: </label>
         <input type="date" name="release_date" value="<%= query[0].release_date %>" required>
- 
         <br><br>
- 
         <label for="likes"> Likes: </label>
         <input type="text" name="likes" value="<%= query[0].likes %>" required>
- 
         <br><br>
- 
         <input type="submit" value="Editar">
- 
     </form>
  
  
     <h1> Letra da música: </h1>
 
     <% if (!lyrics) { %>
+
         <p> Letra não disponível </p>
+
     <% } else { %>
 
     <pre> <%=lyrics.lyrics %> </pre>
  
     <% } %>
+
     <br><br>
  
     <script>
- 
         document.getElementById('update_form').addEventListener('submit', function(event) {
             event.preventDefault();
    

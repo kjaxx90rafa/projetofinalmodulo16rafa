@@ -6,53 +6,112 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Document</title>
     <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            
-            margin: 20px 0;
-            font-size: 18px;
-            text-align: left;
-        }
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f2f5;
+        text-align: center;
+    }
 
-        th, td {
-            border-radius: 4px;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
+    header {
+        background-color: #1e1e2d;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        font-size: 1.4em;
+        font-weight: bold;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
 
-        th {
-            background-color: #4ca8af;
-            color: white;
-        }
+    form {
+        background: white;
+        padding: 25px;
+        margin: 30px auto;
+        width: 400px;
+        border-radius: 10px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    }
 
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
+    h1 {
+        color: #222;
+        margin-top: 30px;
+        font-size: 2em;
+        font-weight: 600;
+    }
 
-        tr:hover {
-            background-color: #ddd;
-        }
+    p {
+        color: #555;
+        font-size: 1.2em;
+        margin: 10px 0;
+    }
 
-        button {
-            background-color: #20962f;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
+    table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        background: white;
+    }
 
-        button:hover {
-            background-color: #d32f2f;
-        }
-    </style>
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #007BFF;
+        color: white;
+        font-weight: bold;
+    }
+
+    td {
+        background-color: #f9f9f9;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+
+    input[type="text"] {
+        width: 70%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #bbb;
+        border-radius: 5px;
+        font-size: 1em;
+        transition: border 0.3s;
+    }
+
+    input[type="text"]:focus {
+        border-color: #007BFF;
+        outline: none;
+    }
+
+    button {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        padding: 12px 18px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 1.1em;
+        font-weight: bold;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+</style>
 </head>
+
 <body>
     <header>
         <%- include('partials/header') %>
@@ -97,11 +156,8 @@
                 .catch((error) => {
                     console.error('Error:', error);
                 });
-
             }
-
         </script>
-
         <% }%>
     </table>
 </body>
