@@ -144,10 +144,12 @@
             function apagar(id) {
 
                 axios.delete(`/api/songs/${id}`).then(response => {
+                    alert('Música eliminada com sucesso');
                     console.log('Success', response.data);
                     location.reload();
                 })
                 .catch((error) => {
+                    alert('Erro ao eliminar música');
                     console.error('Error:', error);
                 });
             }

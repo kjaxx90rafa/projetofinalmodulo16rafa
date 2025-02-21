@@ -169,10 +169,12 @@ button:hover {
             const data = Object.fromEntries(formData.entries());
 
             axios.post('/api/songs', data).then(response => {
+                alert('Música adicionada com sucesso');
                 console.log('Success', response.data);
                 location.reload();
             })
             .catch((error) => {
+                alert('Erro ao adicionar música');
                 console.error('Error:', error);
             });
         });

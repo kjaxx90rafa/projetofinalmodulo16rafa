@@ -127,10 +127,12 @@
             const data = Object.fromEntries(formData.entries());
 
             axios.put('/api/price', data).then(response => {
+                alert('Preço atualizado com sucesso!');
                 console.log('Success', response.data);
                 location.reload();
             })
             .catch((error) => {
+                alert('Erro ao atualizar o preço');
                 console.error('Error:', error);
             });
         });
