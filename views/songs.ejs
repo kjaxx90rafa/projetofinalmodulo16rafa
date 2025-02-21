@@ -48,34 +48,28 @@
 
     table {
         width: 80%;
-        margin: 20px auto;
         border-collapse: collapse;
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-        background: white;
+        background-color: black;
+        color: limegreen;
+        font-family: Arial, sans-serif;
+        text-align: left;
+        margin: 0 auto;
     }
 
-    th, td {
-        padding: 12px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
+    td, th {
+        border: 2px solid limegreen;
+        padding: 10px;
     }
 
     th {
-        background-color: #007BFF;
+        background-color: darkgreen;
         color: white;
         font-weight: bold;
     }
 
-    td {
-        background-color: #f9f9f9;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-
-    tr:hover {
-        background-color: #ddd;
+    th:last-child {
+        background-color: #a6003f;
+        color: white;
     }
 
     input[type="text"] {
@@ -121,15 +115,15 @@
 
     <table border="2">
         <tr> 
-            <th bgcolor="#aac1e1">ID</th> 
-            <th bgcolor="#aac1e1">Titulo</th> 
-            <th bgcolor="#aac1e1">Artista</th>
-            <th bgcolor="#aac1e1">Album</th>
-            <th bgcolor="#aac1e1">Género</th>
-            <th bgcolor="#aac1e1">Duração (sec)</th>
-            <th bgcolor="#aac1e1">Likes</th>
-            <th bgcolor="#aac1e1">Data de Lançamento</th>
-            <th bgcolor="#a6003f">Eliminar</th>
+            <th>ID</th> 
+            <th>Titulo</th> 
+            <th>Artista</th>
+            <th>Album</th>
+            <th>Género</th>
+            <th>Duração (sec)</th>
+            <th>Likes</th>
+            <th>Data de Lançamento</th>
+            <th>Eliminar</th>
         </tr>    
 
         <% for (let i=0; i < query.length; i++) {%>

@@ -96,7 +96,7 @@ app.put('/api/songs/:id', (req, res) =>{
     const duration_seconds = req.body.duration_seconds;
     const release_date = req.body.release_date;
     const likes = req.body.likes;
-    const created_at = req.body.created_at;
+    
 
     const myQuery = `UPDATE songs SET title = '${title}', artist = '${artist}', album = '${album}', genre = '${genre}', duration_seconds = '${duration_seconds}', release_date = '${release_date}', likes = '${likes}' where id=${songsID}`
 
